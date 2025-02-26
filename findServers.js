@@ -8,7 +8,7 @@ export function findServers(ns) {
     while (queue.length > 0) {
         let server = queue.pop();
         for (let connected of ns.scan(server)) {
-            if (!servers.has(connected) && connected !== "home") {
+            if (!servers.has(connected)) {
                 servers.add(connected);
                 queue.push(connected);
             }
